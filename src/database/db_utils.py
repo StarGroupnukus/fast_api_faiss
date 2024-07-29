@@ -1,6 +1,6 @@
 import os
 from src.config.config import Config
-from src.faiss.insight import FaceProcessor
+from src.insightface.singleton import FaceAnalysisSingleton
 import cv2
 from pymongo import MongoClient
 

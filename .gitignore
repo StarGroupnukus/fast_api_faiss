@@ -1,0 +1,29 @@
+# Ignore compiled Python files
+*.pyc
+
+# Ignore virtual environment
+venv/
+
+# Ignore IDE files
+.idea/
+
+# Ignore logs
+*.log
+
+# Ignore cache files
+__pycache__/
+
+# Ignore database files
+*.db
+
+# Ignore sensitive information
+config.ini
+
+# Ignore generated documentation
+docs/
+
+# Ignore compiled binaries
+*.exe
+.env
+.idea/
+files/
