@@ -13,3 +13,9 @@ class Config:
     DIMENSIONS = 512
     INDEX_UPDATE_THRESHOLD = 5
     INIT_IMAGE_PATH = './pavel.png'
+    MONGODB_URL = os.getenv('MONGODB_LOCAL')
+    DATABASE_NAME = 'my_database'
+
+class ApiConfig:
+    API_HOST = 'test'
+    API_PORT = 5000

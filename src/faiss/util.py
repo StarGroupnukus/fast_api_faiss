@@ -6,11 +6,12 @@ import faiss
 import numpy as np
 import requests
 from pymongo import MongoClient
+
+from src.config.config import Config
 from src.insightface.insight import FaceProcessor
 from src.insightface.util import get_faces_data
 
-
-mongo_url =""
+mongo_url = Config.MONGODB_URL
 client = MongoClient(mongo_url)
 
 
@@ -125,4 +126,3 @@ def update_database(org_name, app):
     os.remove(file_name)
 
     return create_indexes(db)
-

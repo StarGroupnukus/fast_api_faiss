@@ -1,9 +1,9 @@
-import json
 import os
 from typing import Annotated
-
+from src.faiss.proccess_images import proccess_images
 from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.responses import FileResponse
+from fastapi.responses import JSONResponse
 
 
 
@@ -17,7 +17,7 @@ app = FastAPI(
     title="FastAPI Tutorial",
     description="A simple REST API using FastAPI",
     version="1.0.0",
-    author="Star Group Nokis",
+    author="AralHub",
     license_info={
         "name": "MIT License",
         "url": "https://spdx.org/licenses/MIT.html",
@@ -38,8 +38,8 @@ async def create_data(
 ):
 
     response_data = await create_document(data, image_file, orig_image_file)
-
-    return response_data
+    proccess_images(response_data)
+    return JSONResponse(content=response_data, status_code=200)
 
 @app.get('/images/{file_path}')
 async def get_image(file_path: str):

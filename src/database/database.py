@@ -2,11 +2,13 @@ import json
 import os
 from datetime import datetime
 from motor.motor_asyncio import AsyncIOMotorClient
+
+from src.config.config import Config
 from src.schemas import PredictImage
 from aiofiles import open as aio_open
 
-MONGODB_URL = os.getenv("MONGODB_URL")
-DATABASE_NAME = "mydatabase"
+MONGODB_URL = Config.MONGODB_URL
+DATABASE_NAME = Config.DATABASE_NAME
 
 # Connect to MongoDB
 client = AsyncIOMotorClient(MONGODB_URL)

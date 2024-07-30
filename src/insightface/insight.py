@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-import urllib.request
 from singleton import FaceAnalysisSingleton
 from util import get_faces_data
 
